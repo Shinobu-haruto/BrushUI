@@ -1,0 +1,128 @@
+/* ==========================================================================
+   _CINNAMON_APPS.CSS - OPTIMIZACIÓN NEMO / XED / SETTINGS
+   ========================================================================== */
+
+/* --- NEMO (Explorador de Archivos) --- */
+
+/* ==========================================================================
+   NEMO FILE MANAGER - NEONBRUSH OS
+   ========================================================================== */
+
+/* Ventana principal y contenedor */
+.nemo-window {
+    background-color: @bg_base;
+}
+
+/* --- SIDEBAR (Barra lateral) --- */
+.nemo-window .sidebar {
+    background-color: @bg_base;
+    border-right: 1px solid @border_color;
+    font-size: 9.5pt;
+}
+
+/* Elementos de la lista lateral */
+.nemo-window .sidebar row {
+    padding: 4px 8px;
+    color: @text_dim;
+    transition: all 150ms ease;
+}
+
+.nemo-window .sidebar row:hover {
+    background-color: alpha(@anime_cyan, 0.05);
+    color: @text_main;
+}
+
+.nemo-window .sidebar row:selected {
+    background-color: alpha(@anime_cyan, 0.15);
+    color: @anime_cyan;
+    font-weight: bold;
+    /* Indicador neón lateral */
+    box-shadow: inset 3px 0 0 @anime_cyan;
+}
+
+/* --- VIEWPORT (Área de archivos) --- */
+.nemo-window .view {
+    background-color: @bg_base;
+    color: @text_main;
+}
+
+/* Selección de archivos (el recuadro de selección) */
+.nemo-window .view:selected {
+    background-color: alpha(@osu_pink, 0.2);
+    color: white;
+    border: 1px solid @osu_pink;
+}
+
+/* --- TOOLBARS (Barra de herramientas y Pathbar) --- */
+.nemo-window toolbar {
+    background-color: @bg_surface;
+    border-bottom: 1px solid @border_color;
+    padding: 4px;
+}
+
+/* Botones de navegación (Atrás, Adelante, Arriba) */
+.nemo-window toolbar button {
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+/* La barra de ruta (donde ves las carpetas como botones) */
+.nemo-window .path-bar-button {
+    margin: 0 2px;
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.nemo-window .path-bar-button:checked {
+    color: @osu_pink;
+    background-color: alpha(@osu_pink, 0.1);
+    border-bottom: 2px solid @osu_pink;
+}
+
+/* --- STATUSBAR (Barra inferior) --- */
+.nemo-window statusbar {
+    background-color: @bg_surface;
+    border-top: 1px solid @border_color;
+    color: @text_dim;
+    font-size: 8.5pt;
+}
+.nemo-window:backdrop .sidebar row:selected {
+    background-color: alpha(@text_dim, 0.1);
+    color: @text_dim;
+    box-shadow: inset 3px 0 0 alpha(@text_dim, 0.3);
+}
+
+.nemo-window:backdrop toolbar {
+    background-color: @bg_base;
+}
+/* Barra de ruta (Pathbar) */
+.path-bar-button {
+    border: 1px solid transparent;
+    transition: all 150ms ease;
+}
+
+.path-bar-button:checked {
+    background-color: alpha(@osu_pink, 0.1);
+    color: @osu_pink;
+    border-bottom: 2px solid @osu_pink;
+}
+
+/* --- XED (Editor de Texto) --- */
+
+/* Panel de búsqueda y estado */
+.xed-window .search-bar {
+    background-color: @bg_surface;
+    border-bottom: 1px solid @anime_cyan;
+}
+
+/* --- CINNAMON SETTINGS (Centro de Control) --- */
+
+/* Categorías de la izquierda */
+.cs-category-view {
+    background-color: @bg_base;
+}
+
+/* Botones de acción en diálogos de Cinnamon */
+.dialog-action-area button {
+    min-width: 80px;
+}

@@ -1,0 +1,61 @@
+/* ==========================================================================
+   MODULE: _OSU.CSS
+   Enfoque: Interactividad circular y retroalimentación táctil
+   ========================================================================== */
+
+/* Botón Circular Estilo Hit-Circle */
+button.osu-circle {
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 100%; /* Círculo perfecto */
+    border: 3px solid @osu_pink;
+    background-color: @bg_widgets;
+    color: white;
+    font-weight: bold;
+    font-size: 14pt;
+    transition: all 150ms cubic-bezier(0, 0, 0, 1); /* Curva de respuesta rápida */
+}
+
+button.osu-circle:hover {
+    background-color: @osu_pink;
+    color: @bg_base;
+    transform: scale(1.1); /* Efecto de expansión al pasar el mouse */
+    box-shadow: 0 0 15px @osu_pink_glow;
+}
+
+button.osu-circle:active {
+    transform: scale(0.9); /* Efecto de click/compresión */
+}
+
+/* Sliders Estilo Osu! */
+scale {
+    padding: 12px;
+}
+
+scale trough {
+    background-color: @bg_surface;
+    border-radius: 10px;
+    min-height: 10px;
+    border: 1px solid @border_color;
+}
+
+scale highlight {
+    background-color: @osu_pink;
+    border-radius: 10px;
+}
+
+scale slider {
+    background-color: white;
+    border: 3px solid @osu_pink;
+    min-width: 20px;
+    min-height: 20px;
+    border-radius: 100%;
+}
+
+/* Listas con selección tipo Osu! (Song Selection) */
+listview row:selected,
+listbox row:selected {
+    background-color: alpha(@osu_pink, 0.2);
+    border-left: 5px solid @osu_pink;
+    color: @osu_pink;
+}

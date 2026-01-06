@@ -1,0 +1,67 @@
+/* ==========================================================================
+   _SCROLLBARS.CSS - NEONBRUSH OS (OPTIMIZADO FINAL)
+   ========================================================================== */
+
+scrollbar {
+    background-color: transparent;
+    transition: all 200ms ease;
+    /* Evita que la scrollbar parpadee al aparecer */
+    -GtkScrollbar-has-backward-stepper: 0;
+    -GtkScrollbar-has-forward-stepper: 0;
+}
+
+/* El fondo (pista) de la barra */
+scrollbar trough {
+    background-color: transparent;
+    border-radius: 4px; /* Consistente con tus botones */
+    transition: all 200ms ease;
+}
+
+/* Solo mostramos la pista al pasar el mouse para un look limpio */
+scrollbar trough:hover {
+    background-color: alpha(@bg_widgets, 0.4);
+}
+
+/* El control deslizante (slider) */
+scrollbar slider {
+    background-color: alpha(@text_dim, 0.4);
+    /* 10px es excelente aquí porque crea el efecto "píldora" (pill)
+       que diferencia una barra de desplazamiento de un botón normal */
+    border-radius: 10px; 
+    margin: 3px;
+    min-width: 6px; /* Reducido ligeramente para ganar espacio en 768p */
+    min-height: 6px;
+    border: 1px solid transparent;
+    transition: all 150ms ease-out;
+}
+
+/* Estado Hover: Estilo Rosa Osu! */
+scrollbar slider:hover {
+    background-color: @osu_pink;
+    border-color: @osu_pink;
+    /* Glow optimizado para no estresar la GPU de la laptop */
+    box-shadow: 0 0 5px @osu_pink_glow;
+    min-width: 10px; /* Se ensancha un poco al tocarlo para facilitar el agarre */
+}
+
+/* Cuando arrastras la barra (Active): Estilo Anime HUD */
+scrollbar slider:active {
+    background-color: @anime_cyan;
+    border-color: @anime_cyan;
+    box-shadow: 0 0 8px @anime_cyan_glow;
+}
+
+/* Scrollbars horizontales */
+scrollbar.horizontal slider {
+    min-height: 6px;
+    min-width: 30px;
+}
+
+scrollbar.horizontal slider:hover {
+    min-height: 10px;
+}
+
+/* --- ESTILO JUNCTION (Donde se cruzan las dos barras) --- */
+scrollbar junction {
+    background-color: transparent;
+}

@@ -1,0 +1,123 @@
+/* ==========================================================================
+   NeonBrush OS - GTK 3.0 Master Configuration
+   ========================================================================== */
+
+/* 1. Definiciones de color (mantener identidad NeonBrush) */
+@import url("modules/_colors.css");
+
+/* 2. Módulos principales */
+@import url("modules/_base.css");
+@import url("modules/_elements.css");
+@import url("modules/_menus.css");
+@import url("modules/_scrollbars.css");
+@import url("modules/_shadows.css");
+@import url("modules/_tooltips.css");
+@import url("modules/_tabs.css");
+@import url("modules/_entry.css");
+@import url("modules/_headerbar.css");
+@import url("modules/_terminal.css");
+@import url("modules/_cinnamon_apps.css");
+@import url("modules/_frames.css");
+
+/* ==========================================================================
+   RESET Y COMPORTAMIENTO GLOBAL GTK 3
+   ========================================================================== */
+
+/* Scrollbars GTK3 */
+scrollbar {
+    min-width: 8px;
+    min-height: 8px;
+    background-color: transparent;
+}
+
+scrollbar slider {
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 10px;
+    background-color: alpha(@text_dim, 0.3);
+    border: 2px solid transparent;
+}
+
+/* Labels y links */
+label {
+    color: @text_main;
+}
+
+label.link, label.link:visited {
+    color: @anime_cyan;
+}
+
+label.link:hover {
+    color: @osu_pink;
+}
+
+/* Focus accesible */
+*:focus,
+*:focus-visible {
+    outline: none;
+}
+
+/* Estabilización de texto y iconos */
+label, selection {
+    -gtk-icon-shadow: none;
+    text-shadow: none;
+}
+
+/* Escalas / sliders */
+scale trough,
+scale slider {
+    background-color: @bg_widgets;
+    border-radius: 10px;
+    border: 2px solid @anime_cyan;
+}
+
+/* Ventana general */
+window,
+window.background,
+.background.csd,
+dialog,
+messagedialog {
+    background-color: @bg_base;
+    background-image: none;
+    opacity: 1.0;
+    transition-property: none;
+}
+
+/* Ventanas inactivas */
+window:backdrop,
+window.background:backdrop,
+.background.csd:backdrop {
+    background-color: @bg_base;
+    opacity: 1.0;
+}
+
+/* Contenedor neutro Cinnamon / Metacity */
+.titlebar {
+    background-color: @bg_base;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    border-radius: 8px 8px 0 0;
+}
+
+.titlebar:backdrop {
+    background-color: @bg_base;
+    border: none;
+    box-shadow: none;
+    outline: none;
+}
+
+/* Eliminar separator GTK que genera línea negra */
+window.csd separator:first-child,
+window.csd > box > separator:first-child {
+    background-color: transparent;
+    min-height: 0;
+    margin: 0;
+}
+
+/* Eliminar sombra residual en backdrop */
+window.csd:backdrop {
+    box-shadow: none;
+}
+

@@ -1,0 +1,39 @@
+/* Ajuste dinámico de sombras en _shadows.css */
+window.csd {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.light window.csd {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+/* ==========================================================================
+   WINDOW DECORATION - NEONBRUSH OS (NEON GLOW)
+   ========================================================================== */
+
+/* Ventana Principal */
+window.decoration {
+    margin: 10px; /* Espacio para que el brillo no se corte */
+    border-radius: 12px;
+    transition: all 300ms ease;
+}
+
+/* ESTADO ACTIVO: Brillo Cian Anime */
+window.decoration:focused {
+    box-shadow: 0 0 20px 2px alpha(@anime_cyan, 0.4),
+                0 0 40px 0px alpha(@anime_cyan, 0.1),
+                0 0 0 1px @anime_cyan; /* Borde fino de luz */
+}
+
+/* ESTADO INACTIVO: Brillo Rosa Osu! Sutil */
+window.decoration:backdrop {
+    box-shadow: 0 0 15px 0px alpha(@osu_pink, 0.2),
+                0 0 0 1px alpha(@osu_pink, 0.3);
+    opacity: 0.95; /* Sutil transparencia para ventanas en segundo plano */
+}
+
+/* Diálogos y Popups (Sombras más intensas) */
+dialog.decoration {
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8),
+                0 0 15px @anime_cyan_glow;
+}

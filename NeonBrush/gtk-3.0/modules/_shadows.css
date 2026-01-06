@@ -1,0 +1,15 @@
+decoration {
+    background-color: @bg_base;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: none;
+}
+
+decoration:focus {
+    box-shadow: 0 0 10px @anime_cyan_glow;
+}
+
+decoration:backdrop {
+    box-shadow: none;
+}
+

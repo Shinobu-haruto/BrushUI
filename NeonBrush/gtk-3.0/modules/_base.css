@@ -1,0 +1,17 @@
+/* modules/_base.css */
+window {
+    background-color: @bg_base;
+    color: @text_main;
+}
+
+/* Tamaño de fuente intermedio (Ideal para 10pt/11pt) */
+label, entry, button {
+    font-family: "Exo 2", sans-serif;
+    font-size: 10pt;
+    -gtk-dpi: 96; /* Forzamos DPI estándar para evitar estiramientos */
+}
+
+/* Pequeño ajuste para que los iconos no se vean borrosos en 768p */
+image {
+    -gtk-icon-transform: scale(1);
+}

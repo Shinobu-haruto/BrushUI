@@ -1,0 +1,41 @@
+/* ==========================================================================
+   _TOOLTIPS.CSS - ANIME HUD STYLE (ESTABILIZADO FINAL)
+   ========================================================================== */
+
+/* El contenedor principal del tooltip */
+tooltip {
+    /* Mantenemos @bg_base pero con una ligera transparencia si el motor lo permite 
+       para ese look de "HUD de cristal" */
+    background-color: alpha(@bg_base, 0.95);
+    border: 1px solid @anime_cyan;
+    border-radius: 6px; /* Sincronizado con ventanas y menús */
+    
+    /* Box-shadow optimizado:
+       El primer shadow da profundidad (negro), el segundo da identidad (cian) */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 
+                0 0 4px alpha(@anime_cyan_glow, 0.5);
+}
+
+/* El texto dentro del tooltip */
+tooltip label {
+    font-family: "Exo 2", "Ubuntu", sans-serif;
+    color: @anime_cyan;
+    font-weight: 600; /* 600 es más legible que Bold puro en 768p */
+    font-size: 0.95em; /* Un poco más grande para que el "Exo 2" no se vea borroso */
+    padding: 6px 10px;
+}
+
+/* Ajuste para tooltips con cajas internas o iconos */
+tooltip box {
+    padding: 2px;
+    margin: 4px;
+    border-radius: 4px; /* Si hay algo dentro del tooltip, volvemos a 4px */
+}
+
+/* --- REGLA PARA APLICACIONES ESPECÍFICAS --- */
+/* Evita que los tooltips de navegadores o apps complejas hereden bordes dobles */
+tooltip.background {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}

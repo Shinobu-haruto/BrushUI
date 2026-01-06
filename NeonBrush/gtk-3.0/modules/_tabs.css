@@ -1,0 +1,57 @@
+/* ==========================================================================
+   TABS / NOTEBOOK - GTK 3 (ESTABILIZADO)
+   ========================================================================== */
+
+notebook {
+    background-color: @bg_base;
+    border: 1px solid @border_color;
+    /* Evita que las pestañas "salten" al cargarse */
+}
+
+notebook header {
+    background-color: @bg_surface;
+    border-bottom: 1px solid @border_color;
+}
+
+/* La pestaña en sí */
+notebook tab {
+    padding: 6px 12px;
+    border: none;
+    background-color: transparent;
+    color: @text_dim;
+    font-weight: bold;
+    /* Cambio: Animamos solo color de texto y fondo, no geometría ni sombras */
+    transition: color 150ms ease-out, background-color 150ms ease-out;
+}
+
+/* Pestaña Activa: Estética Osu! */
+notebook tab:checked, 
+notebook tab:active {
+    color: @osu_pink;
+    /* Usamos un borde sólido en lugar de box-shadow inset para estabilidad */
+    border-bottom: 3px solid @osu_pink;
+    background-color: alpha(@osu_pink, 0.08);
+}
+
+/* Estado Hover: Estética Anime HUD */
+notebook tab:hover {
+    color: @anime_cyan;
+    background-color: alpha(@anime_cyan, 0.08);
+    /* Una línea sutil para indicar selección pendiente */
+    border-bottom: 3px solid alpha(@anime_cyan, 0.5);
+}
+
+/* Botones de cerrar dentro de las pestañas (Close buttons) */
+notebook tab button {
+    padding: 0;
+    margin: 0;
+    min-width: 16px;
+    min-height: 16px;
+    border-radius: 100%;
+    color: @text_dim;
+}
+
+notebook tab button:hover {
+    color: @error_red;
+    background-color: alpha(@error_red, 0.1);
+}

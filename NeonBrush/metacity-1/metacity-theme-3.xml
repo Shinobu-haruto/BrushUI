@@ -1,0 +1,138 @@
+<?xml version="1.0"?>
+<metacity_theme>
+
+<!-- =====================================================
+     INFO
+     ===================================================== -->
+<info>
+  <name>NeonBrush</name>
+  <author>Shinobu Haruto</author>
+  <copyright>2024</copyright>
+  <description>Clean Neon Window Controls – GTK Aligned</description>
+</info>
+
+<!-- =====================================================
+     GEOMETRÍA (AIRE REAL)
+     ===================================================== -->
+<frame_geometry name="normal"
+    rounded_top_left="true"
+    rounded_top_right="true">
+
+  <distance name="left_width" value="1"/>
+  <distance name="right_width" value="1"/>
+  <distance name="bottom_height" value="1"/>
+
+  <distance name="title_vertical_pad" value="10"/>
+  <distance name="button_border" value="6"/>
+
+  <aspect_ratio name="button" value="1.0"/>
+</frame_geometry>
+
+<!-- =====================================================
+     DRAW OPS – BOTONES (SVG-LIKE, NO HUD)
+     ===================================================== -->
+
+<!-- CLOSE -->
+<draw_ops name="close_normal">
+  <rectangle color="#ff5c8a" x="5" y="5" width="10" height="10" radius="4"/>
+</draw_ops>
+
+<draw_ops name="close_hover">
+  <rectangle color="#ff5c8a" x="5" y="5" width="10" height="10" radius="4"/>
+  <rectangle color="rgba(255,92,138,0.35)" x="2" y="2" width="16" height="16" radius="6"/>
+</draw_ops>
+
+<draw_ops name="close_pressed">
+  <rectangle color="#ffffff" x="5" y="5" width="10" height="10" radius="4"/>
+</draw_ops>
+
+<draw_ops name="close_inactive">
+  <rectangle color="#7a7c81" x="5" y="5" width="10" height="10" radius="4"/>
+</draw_ops>
+
+<!-- MINIMIZE -->
+<draw_ops name="min_normal">
+  <rectangle color="#b0b3b8" x="5" y="9" width="10" height="3" radius="2"/>
+</draw_ops>
+
+<draw_ops name="min_hover">
+  <rectangle color="#b0b3b8" x="5" y="9" width="10" height="3" radius="2"/>
+  <rectangle color="rgba(176,179,184,0.3)" x="2" y="2" width="16" height="16" radius="6"/>
+</draw_ops>
+
+<draw_ops name="min_pressed">
+  <rectangle color="#ffffff" x="5" y="9" width="10" height="3" radius="2"/>
+</draw_ops>
+
+<draw_ops name="min_inactive">
+  <rectangle color="#6f7176" x="5" y="9" width="10" height="3" radius="2"/>
+</draw_ops>
+
+<!-- MAXIMIZE -->
+<draw_ops name="max_normal">
+  <rectangle color="#00d4ff" x="5" y="5" width="10" height="10" radius="3"/>
+</draw_ops>
+
+<draw_ops name="max_hover">
+  <rectangle color="#00d4ff" x="5" y="5" width="10" height="10" radius="3"/>
+  <rectangle color="rgba(0,212,255,0.35)" x="2" y="2" width="16" height="16" radius="6"/>
+</draw_ops>
+
+<draw_ops name="max_pressed">
+  <rectangle color="#ffffff" x="5" y="5" width="10" height="10" radius="3"/>
+</draw_ops>
+
+<draw_ops name="max_inactive">
+  <rectangle color="#5f6b70" x="5" y="5" width="10" height="10" radius="3"/>
+</draw_ops>
+
+<!-- =====================================================
+     FRAME STYLE
+     ===================================================== -->
+<frame_style name="normal" geometry="normal">
+
+  <piece position="entire_background">
+    <fill color="#25272d"/>
+  </piece>
+
+  <piece position="title">
+    <draw_ops>
+      <title
+        color="#eeeeee"
+        x="(width - title_width) / 2"
+        y="((height - title_height) / 2) + 1"/>
+    </draw_ops>
+  </piece>
+
+  <!-- Línea inferior sutil -->
+  <line color="#00d4ff"
+        x1="0" y1="height-1"
+        x2="width" y2="height-1"/>
+
+  <!-- BOTONES -->
+  <button function="close"     state="normal"   draw_ops="close_normal"/>
+  <button function="close"     state="hover"    draw_ops="close_hover"/>
+  <button function="close"     state="pressed"  draw_ops="close_pressed"/>
+  <button function="close"     state="inactive" draw_ops="close_inactive"/>
+
+  <button function="minimize"  state="normal"   draw_ops="min_normal"/>
+  <button function="minimize"  state="hover"    draw_ops="min_hover"/>
+  <button function="minimize"  state="pressed"  draw_ops="min_pressed"/>
+  <button function="minimize"  state="inactive" draw_ops="min_inactive"/>
+
+  <button function="maximize"  state="normal"   draw_ops="max_normal"/>
+  <button function="maximize"  state="hover"    draw_ops="max_hover"/>
+  <button function="maximize"  state="pressed"  draw_ops="max_pressed"/>
+  <button function="maximize"  state="inactive" draw_ops="max_inactive"/>
+
+</frame_style>
+
+<!-- =====================================================
+     WINDOW TYPES
+     ===================================================== -->
+<window type="normal" style_set="normal"/>
+<window type="dialog" style_set="normal"/>
+<window type="modal_dialog" style_set="normal"/>
+
+</metacity_theme>
+

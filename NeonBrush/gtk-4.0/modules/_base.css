@@ -1,0 +1,16 @@
+/* modules/_base.css - GTK 4 */
+window {
+    background-color: @bg_base;
+    color: @text_main;
+}
+
+/* En GTK 4, aplicamos la tipografía directamente a los labels y widgets */
+label, entry, button, textview text {
+    font-family: "Exo 2", sans-serif;
+    font-size: 10pt;
+}
+
+/* Reemplazo de -gtk-icon-transform por transform estándar */
+image {
+    transform: scale(1);
+}

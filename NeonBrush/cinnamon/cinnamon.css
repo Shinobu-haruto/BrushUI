@@ -1,0 +1,137 @@
+/* --- CONFIGURACIÓN BASE --- */
+stage {
+    font-family: "Exo 2", sans-serif;
+    color: #e0e0e0;
+}
+
+/* --- PANEL SUPERIOR (SYSTEM & INFO) --- */
+.panel-top {
+    background-color: rgba(26, 27, 38, 0.98);
+    border-bottom: 2px solid #00ffff; /* Cian Anime */
+    height: 32px;
+}
+
+/* --- PANEL INFERIOR (APPS & TASKBAR) --- */
+.panel-bottom {
+    background-color: rgba(26, 27, 38, 0.98);
+    border-top: 2px solid #ff007c; /* Rosa Osu! */
+    height: 40px; 
+}
+
+/* --- LISTA DE VENTANAS (Cinnamon 6.x) --- */
+.window-list-item-box {
+    margin: 3px 5px;
+    padding: 0 10px;
+    border-radius: 6px;
+    background-color: transparent;
+    transition: all 150ms ease-out;
+}
+
+.window-list-item-box:active,
+.window-list-item-box:checked {
+    background-color: rgba(255, 0, 124, 0.12);
+    box-shadow: inset 0 -3px 0 #ff007c; 
+}
+
+.window-list-item-box:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    box-shadow: inset 0 -3px 0 #00ffff; 
+}
+
+/* --- PROGRESS BAR (Nemo/Descargas en el Panel) --- */
+.window-list-item-progress {
+    background-color: rgba(0, 255, 255, 0.2); /* Fondo de la barra */
+    border-radius: 4px;
+}
+
+/* El progreso activo */
+.window-list-item-progress-bar {
+    background-color: #00ffff; /* Color Cian Anime */
+    border-radius: 4px;
+    box-shadow: 0 0 5px #00ffff;
+}
+
+/* --- MENU CINNAMON & HOVER GLOBAL --- */
+.menu {
+    border: 2px solid #00ffff;
+    background-color: #1a1b26;
+}
+
+/* Hover genérico para elementos de lista en menús y applets */
+.menu-category-button:hover,
+.menu-application-button:hover,
+.popup-menu-item:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+    transition: all 120ms ease;
+}
+
+.menu-favorites-button:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+    border: 1px solid #00ffff;
+}
+
+/* --- NOTIFICACIONES --- */
+#notification {
+    background-color: rgba(26, 27, 38, 0.95);
+    border: 2px solid #ff007c; 
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 0 15px rgba(255, 0, 124, 0.3);
+    color: #e0e0e0;
+}
+
+#notification .notification-title {
+    font-weight: 800;
+    font-size: 11pt;
+    color: #ff007c;
+    text-transform: uppercase;
+}
+
+.notification-button:hover {
+    background-color: #00ffff;
+    color: #1a1b26;
+    box-shadow: 0 0 8px #00ffff;
+}
+
+/* --- APPLETS Y POPUPS --- */
+.popup-menu {
+    background-color: rgba(26, 27, 38, 0.98);
+    border: 2px solid #00ffff; 
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px rgba(0, 255, 255, 0.15);
+}
+
+/* Estilo de Hover para filas dentro de applets (Red, Sonido, etc) */
+.popup-menu-item:active {
+    background-color: #ff007c;
+    color: white;
+}
+
+/* --- CALENDARIO --- */
+.calendar-day-base:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    color: #00ffff;
+}
+
+.calendar-today {
+    background-color: #ff007c; 
+    box-shadow: 0 0 8px #ff007c;
+}
+
+/* --- SLIDERS (Volumen/Brillo) --- */
+.slider {
+    -slider-active-background-color: #00ffff;
+}
+
+.slider-handle {
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 5px #00ffff;
+}
+
+/* --- TOOLTIPS --- */
+#tooltip {
+    background-color: #1a1b26;
+    border: 1px solid #ff007c;
+    color: #ff007c;
+}

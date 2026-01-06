@@ -1,0 +1,136 @@
+/* ==========================================================================
+   _ELEMENTS.CSS - NEONBRUSH OS (ESTABILIZADO FINAL - 6px/4px BALANCE)
+   ========================================================================== */
+
+/* --- CHECKBUTTONS --- */
+check {
+    min-width: 18px;
+    min-height: 18px;
+    border: 2px solid @border_color;
+    border-radius: 4px; /* Consistente con botones e inputs */
+    background-color: @bg_widgets;
+    margin: 4px;
+    transition: all 150ms ease-out;
+}
+
+check:checked {
+    background-color: @osu_pink;
+    border-color: @osu_pink;
+    color: white; 
+    box-shadow: 0 0 6px @osu_pink_glow;
+}
+
+/* --- RADIOBUTTONS --- */
+radio {
+    min-width: 18px;
+    min-height: 18px;
+    border: 2px solid @border_color;
+    border-radius: 99px; /* Círculo perfecto para semántica visual */
+    background-color: @bg_widgets;
+    margin: 4px;
+    transition: all 150ms ease-out;
+}
+
+radio:checked {
+    background-color: @bg_base;
+    border-color: @osu_pink;
+    background-image: radial-gradient(circle, @osu_pink 45%, transparent 50%);
+    box-shadow: 0 0 6px @osu_pink_glow;
+}
+
+/* --- SLIDERS (Scale) --- */
+scale trough {
+    background-color: @bg_widgets;
+    border-radius: 4px; /* Sigue la regla del 4px */
+    margin: 10px 0;
+    min-height: 6px;
+}
+
+scale slider {
+    background-color: #ffffff;
+    border: 2px solid @osu_pink; /* Bajado de 3px a 2px para mayor nitidez en 768p */
+    border-radius: 99px;
+    min-width: 16px;
+    min-height: 16px;
+    transition: all 150ms ease;
+}
+
+/* --- BUTTONS --- */
+button {
+    background-color: @bg_surface;
+    border: 1px solid @border_color;
+    border-radius: 4px; /* Ajustado a 4px para ser el "control" preciso */
+    padding: 6px 12px;
+    font-weight: 500;
+    color: @text_main;
+    transition: all 150ms ease-out;
+}
+
+button:hover {
+    background-color: alpha(@osu_pink, 0.1);
+    border-color: @osu_pink;
+    color: @osu_pink;
+}
+
+/* --- LEVELBAR --- */
+levelbar {
+    min-height: 8px;
+    border-radius: 4px; /* Cambiado de 6 a 4 para armonía con progressbars */
+}
+
+levelbar trough {
+    background-color: alpha(@bg_widgets, 0.6);
+    border-radius: 4px;
+}
+
+levelbar block {
+    border-radius: 3px; /* Un punto menos que el contenedor para encaje perfecto */
+}
+
+/* ==========================================================================
+   _SWITCH_PROGRESS.CSS - SWITCHES Y BARRAS DE PROGRESO
+   ========================================================================== */
+
+switch {
+    min-width: 36px;
+    min-height: 20px;
+    border-radius: 20px; /* Estilo píldora obligatorio */
+}
+
+progressbar {
+    min-height: 8px;
+    border-radius: 4px; /* Consistencia total */
+    background-color: alpha(@text_dim, 0.1);
+    border: none;
+    overflow: hidden;
+}
+
+progressbar progress {
+    background-color: @anime_cyan;
+    border-radius: 4px;
+    box-shadow: 0 0 6px @anime_cyan_glow;
+}
+
+/* ==========================================================================
+   _POPOVERS.CSS - POPUPS, POPOVERS Y TOOLTIP
+   ========================================================================== */
+
+popover,
+popup,
+menu,
+.popup-menu {
+    background-color: @bg_surface;
+    border: 2px solid @anime_cyan;
+    border-radius: 6px; /* 6px como la ventana principal: es el contenedor */
+    padding: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+/* Items dentro de menús */
+menuitem, 
+.popup-menu-item,
+popover row {
+    border-radius: 4px; /* El item interno vuelve a 4px */
+    padding: 6px 10px;
+    margin: 2px;
+}

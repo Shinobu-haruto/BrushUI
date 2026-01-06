@@ -1,0 +1,74 @@
+/* ==========================================================================
+   GNOME APPS & LIBADWAITA COMPATIBILITY (NEONBRUSH OS)
+   ========================================================================== */
+
+/* Forzar el fondo oscuro en todas las apps de GNOME */
+.background.headerbar-workspace,
+window.csd,
+window.unified {
+    background-color: @bg_base;
+}
+
+/* Ajuste para las Barras de Título de GNOME (Headerbars CSD) */
+headerbar.titlebar {
+    background-color: @bg_surface;
+    border-bottom: 1px solid @anime_cyan;
+    box-shadow: none;
+    padding: 0 6px;
+}
+
+/* Eliminar el borde blanco/gris que GNOME pone arriba por defecto */
+headerbar.titlebar:not(.selection-mode) {
+    background-image: none;
+    border-top: none;
+}
+
+/* Estilo para los botones de "Sidebar" en apps como GNOME Settings */
+stacksidebar.sidebar row:selected {
+    background-color: alpha(@anime_cyan, 0.15);
+    color: @anime_cyan;
+    box-shadow: inset 4px 0 0 @anime_cyan;
+}
+
+/* Botones redondos de GNOME (Flat buttons) */
+button.flat:hover {
+    background-color: alpha(@anime_cyan, 0.1);
+    color: @anime_cyan;
+}
+
+button.flat:checked, 
+button.flat:active {
+    background-color: @anime_cyan;
+    color: @bg_base;
+}
+
+/* --- PROGRESSBARS EN APPS GNOME --- */
+progressbar progress {
+    background-color: @anime_cyan;
+    background-image: none;
+    border: none;
+    box-shadow: 0 0 10px @anime_cyan_glow;
+}
+
+progressbar trough {
+    background-color: alpha(@text_dim, 0.1);
+    border: none;
+    min-height: 4px;
+}
+
+/* --- SWITCHES (Interruptores GNOME) --- */
+switch {
+    border-radius: 20px;
+    outline: none;
+}
+
+switch:checked {
+    background-color: @anime_cyan;
+    border: 1px solid @anime_cyan;
+}
+
+switch slider {
+    background-color: @text_main;
+    border-radius: 100%;
+    margin: 2px;
+}

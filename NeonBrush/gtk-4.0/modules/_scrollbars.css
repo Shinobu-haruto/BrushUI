@@ -1,0 +1,35 @@
+/* _scrollbars.css - GTK 4 */
+scrollbar {
+    background-color: transparent;
+    transition: background-color 200ms ease;
+}
+
+scrollbar trough {
+    background-color: transparent;
+}
+
+scrollbar trough:hover {
+    background-color: alpha(@bg_widgets, 0.4);
+}
+
+/* El control deslizante se define por min-width/height */
+scrollbar slider {
+    background-color: alpha(@text_dim, 0.4);
+    border-radius: 10px;
+    min-width: 8px;
+    min-height: 8px;
+    margin: 3px;
+    border: 1px solid transparent;
+    transition: background-color 150ms ease-out, border-color 150ms ease-out;
+}
+
+scrollbar slider:hover {
+    background-color: @osu_pink;
+    border-color: @osu_pink;
+    box-shadow: 0 0 5px @osu_pink_glow;
+}
+
+scrollbar slider:active {
+    background-color: @anime_cyan;
+    border-color: @anime_cyan;
+}

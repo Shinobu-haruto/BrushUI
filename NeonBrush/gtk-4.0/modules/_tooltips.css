@@ -1,0 +1,27 @@
+/* ==========================================================================
+   TOOLTIPS - NEONBRUSH OS (ANIME HUD STYLE)
+   ========================================================================== */
+
+tooltip {
+    background-color: rgba(26, 27, 30, 0.95); /* Fondo LCD profundo */
+    border: 1px solid @anime_cyan;
+    border-radius: 8px;
+    box-shadow: 0 0 12px @anime_cyan_glow;
+    padding: 4px 10px;
+}
+
+tooltip label {
+    color: @anime_cyan;
+    font-family: "Ubuntu", "Segoe UI", sans-serif;
+    font-weight: bold;
+    font-size: 0.9em;
+    /* Efecto de texto vibrante */
+    text-shadow: 0 0 5px alpha(@anime_cyan, 0.5);
+}
+
+/* En GTK 4, algunos tooltips pueden tener sub-nodos */
+tooltip.window {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}

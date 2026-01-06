@@ -1,0 +1,33 @@
+/* ==========================================================================
+   _TERMINAL.CSS - ESTILO HUD PARA CONSOLA
+   ========================================================================== */
+
+/* Ajuste para la ventana de terminal */
+terminal-window {
+    background-color: @bg_base;
+}
+
+/* El área de texto */
+vte-terminal {
+    padding: 10px;
+    background-color: @bg_base;
+    /* Efecto de borde interno sutil */
+    box-shadow: inset 0 0 10px rgba(0, 255, 255, 0.05);
+}
+
+/* Barra de búsqueda dentro de la terminal (Ctrl+F) */
+.terminal-search-bar {
+    background-color: @bg_surface;
+    border-top: 1px solid @anime_cyan;
+    padding: 4px;
+}
+
+/* Notebook de la terminal (Pestañas) */
+terminal-window notebook {
+    border: none;
+}
+
+terminal-window notebook tab:checked {
+    border-bottom: 2px solid @anime_cyan;
+    background-color: alpha(@anime_cyan, 0.1);
+}
