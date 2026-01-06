@@ -1,0 +1,43 @@
+<svg width="320" height="120" viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definiciones de gradiente y glow -->
+  <defs>
+    <linearGradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff66aa"></stop>
+      <stop offset="100%" stop-color="#00e5ff"></stop>
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Mango del pincel -->
+  <path d="M60 90 Q65 50 75 20" stroke="#ff66aa" stroke-width="10" fill="none" stroke-linecap="round"></path>
+
+  <!-- Cerdas del pincel con glow -->
+  <path d="M75 20 C80 15 85 15 90 20 L87 27 L78 27 Z" fill="#00e5ff" filter="url(#glow)"></path>
+
+  <!-- Trazo que forma el nombre “NeonBrush” -->
+  <path d="M75 22 
+           Q95 30 120 35 
+           T160 40 
+           T200 50 
+           T240 55 
+           T280 60" stroke="url(#strokeGradient)" stroke-width="6" fill="none" stroke-linecap="round" filter="url(#glow)"></path>
+
+  <!-- Texto “Brush” sólido en rosa -->
+  <text x="20" y="115" font-family="JetBrains Mono, monospace" font-size="32" fill="#ff66aa">
+    Brush
+  </text>
+
+  <!-- Partículas de chispa a lo largo del trazo -->
+  <circle cx="110" cy="35" r="2" fill="#ff66aa" filter="url(#glow)"></circle>
+  <circle cx="150" cy="42" r="2.5" fill="#00e5ff" filter="url(#glow)"></circle>
+  <circle cx="190" cy="48" r="2" fill="#ff66aa" filter="url(#glow)"></circle>
+  <circle cx="230" cy="53" r="2.5" fill="#00e5ff" filter="url(#glow)"></circle>
+  <circle cx="270" cy="58" r="2" fill="#ff66aa" filter="url(#glow)"></circle>
+</svg>
