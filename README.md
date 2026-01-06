@@ -51,7 +51,6 @@ BrushUI/
   <img src="screenshots/Brush-preview.png" alt="Brush" width="256"/>
 </p>
 
-*(Añade aquí más capturas dentro de la carpeta `screenshots/` si las tienes)*
 
 ---
 
