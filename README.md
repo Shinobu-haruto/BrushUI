@@ -22,3 +22,44 @@ El objetivo es dar un aspecto artístico, inspirado en pinceles digitales, UI de
 
 ## 🖼️ Estructura del repositorio
 
+BrushUI/
+├── Brush/ # Archivos del tema Brush
+├── NeonBrush/ # Archivos del tema NeonBrush
+├── NeonBrush Logo.svg # Logo principal del tema
+├── LICENSE # Licencia MIT
+└── README.md # Este archivo
+
+
+---
+
+## 🌟 Características
+
+- 🎨 **Paleta visualmente atractiva** con rosa y cyan vibrante.  
+- 🖌️ **Diseño inspirado en pinceles** y trazos digitales.  
+- 🌙 **Modo oscuro por defecto** para confort visual.  
+- 💡 Compatible con entornos GTK y Cinnamon.  
+- 📁 Incluye variantes “Brush” y “NeonBrush”.
+
+---
+
+## 📸 Capturas
+
+<p align="center">
+  <img src="thumbnail-panel.png" alt="Panel NeonBrush" width="256"/>
+</p>
+
+*(Añade aquí más capturas dentro de la carpeta `screenshots/` si las tienes)*
+
+---
+
+## 📥 Instalación
+
+### Para Cinnamon
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/Shinobu-haruto/BrushUI.git
+
+
+cp -r BrushUI/Brush ~/.themes/
+cp -r BrushUI/NeonBrush ~/.themes/
