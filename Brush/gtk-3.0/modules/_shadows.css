@@ -1,0 +1,42 @@
+/* ==========================================================================
+   _DECORATION.CSS - DECORACIÓN DE VENTANA (DERIVADA BRUSH)
+   ========================================================================== */
+
+decoration {
+    background-color: @bg_base;
+    margin: 10px;
+    border-radius: 8px;
+    
+    /* En lugar de resplandor, usamos un borde sólido "pincelado" */
+    /* Este es el marco base de la ventana */
+    border: 1px solid @border_color;
+    
+    /* Sombra técnica opaca y corta para dar profundidad sin luz */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    
+    transition: all 200ms ease-in-out;
+}
+
+/* Estado de Foco (Ventana Activa) */
+decoration:focus {
+    /* El borde cambia al color de acento cian, simulando un trazo activo */
+    border: 2px solid @anime_cyan;
+    
+    /* Eliminamos el glow y lo cambiamos por un sutil relieve oscuro */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Ventana en segundo plano (Inactiva) */
+decoration:backdrop {
+    /* El trazo se vuelve opaco y fino para indicar inactividad */
+    border: 1px solid alpha(@border_color, 0.5);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+/* Ajuste para ventanas maximizadas o pegadas (Tiling) */
+window.maximized decoration,
+window.tiled decoration {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+}

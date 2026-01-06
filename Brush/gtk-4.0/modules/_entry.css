@@ -1,0 +1,63 @@
+/* ==========================================================================
+   _ENTRY.CSS - CAMPOS DE TEXTO (OPTIMIZADO GTK 4)
+   ========================================================================== */
+
+entry {
+    min-height: 32px;
+    border-radius: 6px;
+    background-color: @bg_widgets;
+    border: 1px solid @border_color;
+    color: @text_main;
+    
+    /* En GTK 4, el padding principal se aplica al nodo interno 'text' */
+    padding: 0;
+    transition: border-color 150ms ease-out;
+}
+
+/* Nodo interno donde reside el texto y el cursor */
+entry text {
+    padding: 6px 10px;
+}
+
+/* Estado de Foco (HUD Activo) */
+/* GTK 4 prefiere el estado :focus-within para el contenedor entry */
+entry:focus-within {
+    border-color: @anime_cyan;
+    box-shadow: 0 0 6px @anime_cyan_glow;
+}
+
+/* Selección de texto (Estilo Osu!) */
+entry text selection {
+    background-color: alpha(@osu_pink, 0.4);
+    color: #ffffff;
+}
+
+/* Campos de texto desactivados */
+entry:disabled {
+    background-color: alpha(@bg_widgets, 0.5);
+    color: @text_dim;
+    border-color: alpha(@border_color, 0.2);
+    box-shadow: none;
+}
+
+/* --- PROGRESS BAR INTERNA --- */
+/* En GTK 4, el nodo es 'progress' dentro de entry */
+entry progress {
+    /* Eliminamos estilos heredados de GTK 3 */
+    background-color: transparent;
+    border: none;
+}
+
+/* La pista de la barra de progreso */
+entry progress trough {
+    background-color: transparent;
+}
+
+/* El avance real de la barra (ej: carga en buscadores) */
+entry progress trough progress {
+    background-color: @anime_cyan;
+    min-height: 2px;
+    /* Efecto neón en la base del texto */
+    box-shadow: 0 2px 4px @anime_cyan_glow;
+    border-radius: 0 0 6px 6px;
+}

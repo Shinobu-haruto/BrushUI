@@ -1,0 +1,49 @@
+/* ==========================================================================
+   SWITCH - NEONBRUSH OS (TACTICAL HUD)
+   ========================================================================== */
+
+switch {
+    font-weight: bold;
+    outline: none;
+}
+
+/* La pista del interruptor */
+switch trough {
+    background-color: @bg_widgets;
+    border: 2px solid @border_color;
+    border-radius: 20px;
+    min-width: 44px;
+    min-height: 22px;
+    transition: all 200ms ease;
+}
+
+/* El círculo deslizante */
+switch slider {
+    background-color: @text_dim;
+    border-radius: 100%;
+    min-width: 14px;
+    min-height: 14px;
+    margin: 4px; /* Espacio dentro de la pista */
+    transition: all 200ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ESTADO ACTIVADO (Estilo Anime Cyan) */
+switch:checked trough {
+    background-color: alpha(@anime_cyan, 0.15);
+    border-color: @anime_cyan;
+    box-shadow: 0 0 8px @anime_cyan_glow;
+}
+
+switch:checked slider {
+    background-color: @anime_cyan;
+    box-shadow: 0 0 5px @anime_cyan;
+}
+
+/* ESTADO HOVER (Rosa Osu!) */
+switch:hover trough {
+    border-color: @osu_pink;
+}
+
+switch:hover slider {
+    background-color: @text_main;
+}

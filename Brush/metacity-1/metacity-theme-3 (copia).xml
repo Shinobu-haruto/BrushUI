@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<metacity_theme>
+
+<!-- =========================
+     INFO
+     ========================= -->
+<info>
+  <name>NeonBrush-HUD</name>
+  <author>Shinobu Haruto</author>
+  <copyright>2024</copyright>
+  <description>Anime HUD / Osu inspired window decorations</description>
+</info>
+
+<!-- =========================
+     GEOMETRÍA
+     ========================= -->
+<frame_geometry name="normal" rounded_top_left="true" rounded_top_right="true">
+  <distance name="left_width" value="1"/>
+  <distance name="right_width" value="1"/>
+  <distance name="bottom_height" value="1"/>
+  <distance name="title_vertical_pad" value="8"/>
+  <aspect_ratio name="button" value="1.0"/>
+</frame_geometry>
+
+<!-- =========================
+     DRAW OPS – BOTONES
+     ========================= -->
+
+<!-- CLOSE -->
+<draw_ops name="close_normal">
+  <arc color="#ff66aa" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<draw_ops name="close_hover">
+  <arc color="#ff66aa" x="4" y="4" width="12" height="12" filled="true"/>
+  <arc color="rgba(255,102,170,0.6)" x="2" y="2" width="16" height="16" filled="false"/>
+</draw_ops>
+
+<draw_ops name="close_pressed">
+  <arc color="#ffffff" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<draw_ops name="close_inactive">
+  <arc color="#9a9ca1" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<!-- MAX -->
+<draw_ops name="max_normal">
+  <arc color="#00e5ff" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<draw_ops name="max_hover">
+  <arc color="#00e5ff" x="4" y="4" width="12" height="12" filled="true"/>
+  <arc color="rgba(0,229,255,0.4)" x="2" y="2" width="16" height="16" filled="false"/>
+</draw_ops>
+
+<draw_ops name="max_pressed">
+  <arc color="#ffffff" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<draw_ops name="max_inactive">
+  <arc color="#6b6d72" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<!-- MIN -->
+<draw_ops name="min_normal">
+  <arc color="#9a9ca1" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<draw_ops name="min_hover">
+  <arc color="#9a9ca1" x="4" y="4" width="12" height="12" filled="true"/>
+  <arc color="rgba(154,156,161,0.4)" x="2" y="2" width="16" height="16" filled="false"/>
+</draw_ops>
+
+<draw_ops name="min_pressed">
+  <arc color="#ffffff" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<draw_ops name="min_inactive">
+  <arc color="#6b6d72" x="4" y="4" width="12" height="12" filled="true"/>
+</draw_ops>
+
+<!-- =========================
+     FRAME STYLES
+     ========================= -->
+
+<!-- ACTIVO -->
+<frame_style name="normal" geometry="normal">
+  <piece position="entire_background">
+    <fill color="#25272d"/>
+  </piece>
+
+  <piece position="title">
+    <draw_ops>
+      <title color="#eeeeee"
+             x="(width - title_width) / 2"
+             y="((height - title_height) / 2)"/>
+    </draw_ops>
+  </piece>
+
+  <!-- Línea HUD inferior -->
+  <line color="#00e5ff" x1="0" y1="height-1" x2="width" y2="height-1"/>
+
+  <!-- Botones IZQUIERDA -->
+  <button function="close"   state="normal"   draw_ops="close_normal"/>
+  <button function="close"   state="prelight" draw_ops="close_hover"/>
+  <button function="close"   state="pressed"  draw_ops="close_pressed"/>
+
+  <button function="maximize" state="normal"   draw_ops="max_normal"/>
+  <button function="maximize" state="prelight" draw_ops="max_hover"/>
+  <button function="maximize" state="pressed"  draw_ops="max_pressed"/>
+
+  <button function="minimize" state="normal"   draw_ops="min_normal"/>
+  <button function="minimize" state="prelight" draw_ops="min_hover"/>
+  <button function="minimize" state="pressed"  draw_ops="min_pressed"/>
+</frame_style>
+
+<!-- INACTIVO -->
+<frame_style name="inactive" geometry="normal">
+  <piece position="entire_background">
+    <fill color="#121317"/>
+  </piece>
+
+  <piece position="title">
+    <draw_ops>
+      <title color="#9a9ca1"
+             x="(width - title_width) / 2"
+             y="((height - title_height) / 2)"/>
+    </draw_ops>
+  </piece>
+
+  <line color="rgba(0,229,255,0.25)" x1="0" y1="height-1" x2="width" y2="height-1"/>
+
+  <button function="close"    state="normal" draw_ops="close_inactive"/>
+  <button function="maximize" state="normal" draw_ops="max_inactive"/>
+  <button function="minimize" state="normal" draw_ops="min_inactive"/>
+</frame_style>
+
+<!-- =========================
+     WINDOW BINDINGS
+     ========================= -->
+<window type="normal"        style_set="normal"/>
+<window type="dialog"        style_set="normal"/>
+<window type="modal_dialog"  style_set="normal"/>
+<window type="utility"       style_set="normal"/>
+
+</metacity_theme>
+

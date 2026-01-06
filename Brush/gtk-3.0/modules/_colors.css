@@ -1,0 +1,38 @@
+/* ==========================================================================
+   _COLORS.CSS - BRUSH DERIVATIVE (PALETA PIGMENTO MATE)
+   ========================================================================== */
+
+/* Fondos y Superficies: Inspirados en Dark Mode de Software de Arte */
+@define-color bg_base    #1a1b26; /* Fondo profundo, ligeramente azulado (tipo lienzo) */
+@define-color bg_surface #24283b; /* Superficies elevadas (Popovers/Menús) */
+@define-color bg_widgets #2f3549; /* Fondo de botones e inputs para contraste */
+
+/* Colores de Tinta (Texto): Legibilidad de alta precisión */
+@define-color text_main  #c0caf5; /* Azul grisáceo muy claro (evita el blanco puro) */
+@define-color text_dim   #787c99; /* Texto de soporte, estilo boceto */
+
+/* Trazos y Bordes: El entintado (Ink) */
+@define-color border_color  #32344a; /* Trazo de carboncillo para estructura */
+@define-color border_stroke #565f89; /* Resalte de trazo activo */
+
+/* Pigmentos Principales: Osu! Pink + Fantasy Cyan */
+/* Mantenemos nombres para compatibilidad total con tus módulos anteriores */
+
+/* Rosa Osu! (Inspiración: Osu! UI & Digital Art) */
+@define-color osu_pink      #ff66aa; /* Rosa saturado, tipo marcador */
+@define-color osu_pink_dark #cc4b88;
+
+/* Cian Mágico (Inspiración: Anime Fantasy Mana) */
+@define-color anime_cyan      #00e5ff; /* Cian eléctrico pero sólido */
+@define-color anime_cyan_dark #00b3cc;
+
+/* Estados de Interacción (Basados en mezcla de pigmentos) */
+@define-color accent_bg    mix(@osu_pink, @bg_base, 0.2);
+@define-color selection_bg alpha(@anime_cyan, 0.35); /* Selección estilo resaltador */
+@define-color destructive  #f7768e; /* Rojo coral (fantasía) para errores */
+@define-color success      #9ece6a; /* Verde bosque (anime) para éxito */
+
+/* Alias para semántica de pincel */
+@define-color brush_primary   @osu_pink;
+@define-color brush_secondary @anime_cyan;
+@define-color error_red       @destructive;

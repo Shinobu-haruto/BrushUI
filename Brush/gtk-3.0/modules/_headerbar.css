@@ -1,0 +1,94 @@
+/* ==========================================================================
+   HEADERBAR - BRUSH DERIVATIVE (ESTABILIZADO MATE)
+   ========================================================================== */
+
+/* --------------------------------------------------
+ * HEADERBAR BASE (activo)
+ * -------------------------------------------------- */
+headerbar {
+    min-height: 34px; /* Bajado de 38px a 34px: sin glow no necesitamos aire extra */
+    background-color: @bg_surface;
+    background-clip: padding-box;
+    
+    /* Trazo sólido inferior (estilo subrayado de dibujo) */
+    border-bottom: 2px solid @anime_cyan; 
+    
+    /* Eliminamos el brillo interno superior, usamos un borde neutro */
+    box-shadow: none; 
+    border-top: 1px solid alpha(white, 0.03); 
+
+    border-radius: 6px 6px 0 0;
+    transition: background-color 200ms ease;
+}
+
+/* TÍTULO - Legibilidad pura sin halos de luz */
+headerbar .title {
+    color: @text_main;
+    font-weight: 700;
+    text-shadow: none; /* ELIMINADO GLOW */
+}
+
+/* --------------------------------------------------
+ * HEADERBAR INACTIVO (BACKDROP)
+ * -------------------------------------------------- */
+headerbar:backdrop {
+    background-color: @bg_base;
+    /* El trazo se vuelve grisáceo y fino al perder el foco */
+    border-bottom: 2px solid alpha(@border_color, 0.5);
+    box-shadow: none;
+}
+
+headerbar:backdrop .title {
+    color: @text_dim;
+    text-shadow: none;
+    opacity: 0.8; /* Un poco más opaco que antes para que sea legible */
+}
+
+/* --------------------------------------------------
+ * CONTENEDOR TITLEBAR (Metacity / Cinnamon / XFCE)
+ * -------------------------------------------------- */
+.titlebar {
+    background-color: @bg_base;
+    border-radius: 6px 6px 0 0;
+    border: none;
+}
+
+/* --------------------------------------------------
+ * BOTONES DE CONTROL (Cerrar, Max, Min)
+ * -------------------------------------------------- */
+headerbar button.titlebutton {
+    border-radius: 4px; /* Tu regla de 4px para controles */
+    padding: 4px;
+    margin: 4px;
+    min-width: 24px;
+    min-height: 24px;
+    border: 1px solid transparent; /* Reserva de espacio para el hover */
+    transition: all 120ms ease-in-out;
+}
+
+/* Botón de cerrar: Color sólido de pintura (Osu Pink / Naranja Óleo) */
+headerbar button.titlebutton.close:hover {
+    background-color: @osu_pink;
+    border-color: shade(@osu_pink, 0.8);
+    color: white;
+    box-shadow: none; /* ELIMINADO GLOW */
+}
+
+/* Botones normales (Min/Max) en hover */
+headerbar button.titlebutton:hover {
+    background-color: alpha(@text_main, 0.1);
+    border-color: alpha(@text_main, 0.2);
+}
+
+/* --------------------------------------------------
+ * LIMPIEZA DE BORDES (Tiling y Maximizado)
+ * -------------------------------------------------- */
+window.maximized headerbar,
+window.maximized .titlebar,
+window.tiled headerbar {
+    border-radius: 0;
+}
+
+window.csd separator {
+    opacity: 0;
+}

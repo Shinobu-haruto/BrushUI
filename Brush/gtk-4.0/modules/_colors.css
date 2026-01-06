@@ -1,0 +1,29 @@
+/* ==========================================================================
+   _COLORS.CSS - SOPORTE DINÁMICO CLARO/OSCURO
+   ========================================================================== */
+
+/* --- PALETA OSCURA (Default / Night Mode) --- */
+@define-color bg_base #121317;
+@define-color bg_widgets #1c1e23;
+@define-color bg_surface #25272d;
+@define-color text_main #eeeeee;
+@define-color text_dim #9a9ca1;
+
+/* --- PALETA CLARA (Day Mode / Manga Style) --- */
+/* Se activa mediante la clase .light o la preferencia del sistema */
+@if (variant == 'light') {
+    @define-color bg_base #e0e0e4;
+    @define-color bg_widgets #d1d1d6;
+    @define-color bg_surface #c7c7cc;
+    @define-color text_main #1a1a1a;
+    @define-color text_dim #555555;
+}
+
+/* --- COLORES NEÓN (Se mantienen en ambos modos para identidad de marca) --- */
+@define-color osu_pink #ff66aa;
+@define-color osu_pink_glow rgba(255, 102, 170, 0.3);
+
+@define-color anime_cyan #00e5ff;
+@define-color anime_cyan_glow rgba(0, 229, 255, 0.3);
+
+@define-color border_color rgba(0, 0, 0, 0.08);

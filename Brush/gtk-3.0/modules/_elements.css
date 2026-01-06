@@ -1,0 +1,158 @@
+/* ==========================================================================
+   _ELEMENTS.CSS - BRUSH (DERIVADA MATE - SUITE COMPLETA)
+   ========================================================================== */
+
+/* --- CHECK Y RADIO --- */
+check, radio {
+    min-width: 18px;
+    min-height: 18px;
+    border: 2px solid @border_color;
+    background-color: @bg_widgets;
+    margin: 4px;
+    transition: all 150ms ease-out;
+}
+
+check { border-radius: 4px; }
+radio { border-radius: 99px; }
+
+check:checked {
+    background-color: @osu_pink;
+    border-color: @osu_pink;
+    color: white; 
+}
+
+radio:checked {
+    background-color: @bg_base;
+    border-color: @osu_pink;
+    background-image: radial-gradient(circle, @osu_pink 60%, transparent 65%);
+}
+
+/* --- BOTONES Y CONTROLES --- */
+button {
+    background-color: @bg_surface;
+    border: 1px solid @border_color;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: 500;
+    color: @text_main;
+    transition: all 100ms ease-in-out;
+}
+
+button:hover {
+    background-color: mix(@bg_surface, @osu_pink, 0.15);
+    border-color: @osu_pink;
+}
+
+button:active, button:checked {
+    background-color: @osu_pink;
+    color: white;
+}
+
+/* --- SPINBUTTONS (Selectores numéricos) --- */
+spinbutton {
+    padding: 0;
+}
+
+spinbutton entry {
+    border-radius: 4px 0 0 4px;
+    border-right-width: 0;
+}
+
+spinbutton button {
+    border-radius: 0;
+    padding: 0 6px;
+}
+
+spinbutton button:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+/* --- COMBOBOX (Selectores desplegables) --- */
+combobox {
+    background-color: @bg_widgets;
+    border: 1px solid @border_color;
+    border-radius: 4px;
+}
+
+combobox button {
+    border: none;
+    background: transparent;
+}
+
+/* --- PROGRESS Y LEVELBAR --- */
+progressbar, levelbar {
+    min-height: 8px;
+    border-radius: 4px;
+}
+
+progressbar {
+    background-color: alpha(@text_dim, 0.2);
+    border: 1px solid alpha(@border_color, 0.5);
+}
+
+progressbar progress {
+    background-color: @anime_cyan;
+    border-radius: 3px;
+}
+
+levelbar trough {
+    background-color: @bg_widgets;
+    border: 1px solid @border_color;
+}
+
+levelbar block {
+    border-radius: 2px;
+    margin: 1px;
+}
+
+/* --- TOOLTIPS (Inspiración Anime de Fantasía) --- */
+tooltip {
+    background-color: @bg_surface;
+    border: 2px solid @osu_pink; /* El tooltip usa el rosa para destacar */
+    border-radius: 4px;
+    color: @text_main;
+    padding: 4px 8px;
+    /* Sombra técnica sólida */
+    box-shadow: 3px 3px 0px rgba(0,0,0,0.5);
+}
+
+tooltip label {
+    font-weight: bold;
+    font-size: 9pt;
+}
+
+/* --- LIST ROWS (Nautilus, Ajustes, etc) --- */
+row {
+    padding: 10px;
+    transition: all 100ms ease;
+}
+
+row:selected {
+    background-color: alpha(@anime_cyan, 0.2);
+    color: @text_main;
+    border-left: 4px solid @anime_cyan; /* Indicador de selección lateral */
+}
+
+row:hover:not(:selected) {
+    background-color: alpha(@text_main, 0.05);
+}
+
+/* --- SWITCHES (Píldoras) --- */
+switch {
+    min-width: 36px;
+    min-height: 20px;
+    border-radius: 20px;
+    border: 2px solid @border_color;
+    background-color: @bg_widgets;
+}
+
+switch:checked {
+    background-color: @anime_cyan;
+    border-color: @anime_cyan;
+}
+
+switch slider {
+    background-color: @text_main;
+    border-radius: 100%;
+    margin: 2px;
+}

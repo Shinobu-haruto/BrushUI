@@ -1,0 +1,73 @@
+/* ==========================================================================
+   NeonBrush OS - GTK 4.0 Master Configuration
+   ========================================================================== */
+
+/* 1. Definiciones de color (Se mantienen igual) */
+@import url("modules/_colors.css");
+
+@import url("modules/_base.css");
+@import url("modules/_elements.css");
+@import url("modules/_menus.css");
+@import url("modules/_scrollbars.css");
+@import url("modules/_shadows.css");
+@import url("modules/_tooltips.css");
+@import url("modules/_tabs.css");
+@import url("modules/_entry.css");
+@import url("modules/_headerbar.css");
+@import url("modules/_terminal.css");
+@import url("modules/_gnome_apps.css");
+
+/* ==========================================================================
+   RESET Y COMPORTAMIENTO GLOBAL (OPTIMIZADO GTK 4)
+   ========================================================================== */
+
+/* En GTK 4, las dimensiones se controlan con min-width/min-height y CSS estándar */
+scrollbar {
+    min-width: 8px;
+    min-height: 8px;
+    background-color: transparent;
+}
+
+scrollbar slider {
+    min-width: 8px;
+    min-height: 8px;
+    border-radius: 10px;
+    background-color: alpha(@text_dim, 0.3);
+    border: 2px solid transparent; /* Reemplaza a trough-border */
+}
+
+/* Reemplazo de las propiedades -Gtk obsoletas */
+label {
+    /* En GTK 4, los enlaces se controlan con la clase .link */
+    color: @text_main;
+}
+
+label.link, label.link:visited {
+    color: @anime_cyan;
+}
+
+label.link:hover {
+    color: @osu_pink;
+}
+
+/* Focus: GTK 4 usa el estado :focus-visible para accesibilidad */
+*:focus {
+    outline: none;
+}
+
+/* Estabilización de renderizado para Exo 2 */
+label, selection {
+    -gtk-icon-shadow: none;
+    text-shadow: none;
+}
+
+/* Las barras de progreso y escalas ahora usan selectores más simples */
+scale contents trough slider {
+    background-color: @text_main;
+    border: 2px solid @anime_cyan;
+}
+
+/* Solución para evitar parpadeo en Libadwaita */
+window {
+    transition-property: none;
+}

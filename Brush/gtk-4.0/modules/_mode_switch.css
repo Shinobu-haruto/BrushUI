@@ -1,0 +1,26 @@
+/* modules/_mode_switch.css */
+
+/* Estructura del Switch de Modo */
+switch.mode-selector {
+    border: 1px solid @border_color;
+    border-radius: 20px;
+    background-color: @bg_widgets;
+}
+
+/* ESTADO OSCURO (OFF) */
+switch.mode-selector slider {
+    background-image: radial-gradient(circle, #f5f5f5 30%, #ccc 100%); /* Luna */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* ESTADO CLARO (ON) */
+switch.mode-selector:checked {
+    background-color: #ffcc33; /* Color Sol/Atardecer */
+    border-color: #e6b800;
+}
+
+switch.mode-selector:checked slider {
+    background-image: radial-gradient(circle, #ff9900 20%, #ffcc33 100%); /* Sol */
+    box-shadow: 0 0 15px #ffcc33;
+    transform: translateX(24px);
+}

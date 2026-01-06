@@ -1,0 +1,84 @@
+/* ==========================================================================
+   _FRAME.CSS - BORDES Y CONTENEDORES (ESTABILIZADO GTK 3)
+   ========================================================================== */
+
+/* Marcos estándar (ej: cuadros en Configuración o Nemo) */
+frame, .frame {
+    border: 1px solid @border_color;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+/* El borde de los cuadros de texto grandes (TextView/ScrolledWindow) */
+scrolledwindow frame {
+    border: none; /* Evitamos doble borde en visores con scroll */
+}
+
+/* --- MARCOS CON TÍTULO (Group Boxes) --- */
+frame > label {
+    font-weight: bold;
+    color: @anime_cyan; /* Título neón para secciones */
+    margin-bottom: 4px;
+    margin-left: 6px;
+    text-shadow: 0 0 3px alpha(@anime_cyan, 0.4);
+}
+
+frame:backdrop,
+.frame:backdrop {
+    border-color: alpha(@border_color, 0.5);
+}
+
+frame > label:backdrop {
+    color: alpha(@anime_cyan, 0.4);
+    text-shadow: none;
+}
+
+/* --- MARCOS DE SELECCIÓN (Rubberband) --- */
+.rubberband,
+rubberband {
+    background-color: alpha(@anime_cyan, 0.2);
+    border: 1px solid @anime_cyan;
+    border-radius: 2px;
+}
+
+/* --- LÍNEAS DIVISORIAS (Separadores) --- */
+separator {
+    background-color: @border_color;
+    min-height: 1px;
+    min-width: 1px;
+    margin: 4px 0;
+}
+
+/* Neutralizar separator pegado al headerbar para eliminar línea negra */
+window.csd separator:first-child,
+window.csd > box > separator:first-child,
+window.csd > stack > separator:first-child {
+    background-color: transparent;
+    min-height: 0;
+    margin: 0;
+}
+
+/* --- MARCOS DE IMAGENES O MINIATURAS --- */
+frame.image-frame {
+    border: 1px solid @anime_cyan;
+    background-color: @bg_widgets;
+    box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/* --- BORDES DE LISTAS (ListBox) --- */
+list {
+    background-color: @bg_widgets;
+    border: 1px solid @border_color;
+    border-radius: 6px;
+}
+
+row {
+    transition: background-color 150ms ease;
+}
+
+row:selected {
+    background-color: alpha(@anime_cyan, 0.1);
+    color: @anime_cyan;
+    box-shadow: inset 3px 0 0 @anime_cyan;
+}
+

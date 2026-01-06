@@ -1,0 +1,77 @@
+/* ==========================================================================
+   _MENUS.CSS - MENÚS CONTEXTUALES (DERIVADA BRUSH - MATE)
+   ========================================================================== */
+
+menu {
+    background-color: @bg_surface; /* Un tono más claro que el fondo para contraste */
+    border: 2px solid @anime_cyan;  /* Trazo de pincel definido */
+    border-radius: 6px; 
+    padding: 4px;
+    
+    /* Sombra "Hard" estilo ilustración en lugar de brillo neon */
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.4); 
+    margin: 4px;
+}
+
+/* Soporte para submenús */
+menu menu {
+    margin-left: 2px;
+    margin-top: -2px;
+}
+
+menuitem {
+    padding: 6px 12px;
+    border-radius: 4px; /* Regla del control: 4px */
+    color: @text_main;
+    margin: 2px 0;
+    transition: all 100ms ease-in-out;
+}
+
+/* Estado Seleccionado: Bloque de color sólido */
+menuitem:hover,
+menuitem:selected {
+    background-color: @anime_cyan;
+    color: #ffffff; /* Texto blanco sobre el fondo cian sólido */
+    text-shadow: none; /* ELIMINADO GLOW */
+}
+
+/* --- ACELERADORES (Atajos de teclado) --- */
+menuitem accelerator {
+    color: alpha(@text_main, 0.5);
+    margin-left: 20px;
+    font-size: 0.85em;
+}
+
+/* --- CHECK Y RADIO DENTRO DE MENÚS --- */
+/* Sustituimos el brillo por un color sólido intenso */
+menu menuitem check:checked,
+menu menuitem radio:checked {
+    color: @osu_pink;
+    -gtk-icon-shadow: none; /* ELIMINADO GLOW */
+}
+
+/* --- SEPARADORES (Línea de corte limpia) --- */
+menu separator {
+    background-color: @border_color;
+    margin: 6px 10px;
+    min-height: 1px;
+}
+
+/* --- MENÚS DE BARRA SUPERIOR (Menubar) --- */
+menubar {
+    background-color: @bg_base;
+    border-bottom: 2px solid @border_color;
+    padding: 2px 4px;
+}
+
+menubar > menuitem {
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+menubar > menuitem:hover {
+    background-color: alpha(@anime_cyan, 0.2);
+    color: @text_main;
+    /* En lugar de glow, usamos un borde inferior sólido de 2px */
+    box-shadow: inset 0 -2px 0 @anime_cyan; 
+}

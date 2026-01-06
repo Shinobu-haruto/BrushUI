@@ -1,0 +1,50 @@
+/* ==========================================================================
+   MODULE: _DRAWING.CSS
+   Enfoque: Interfaz de precisión y espacio de trabajo neutro
+   ========================================================================== */
+
+/* 1. EL LIENZO (Área de Dibujo) */
+.canvas-container {
+    background-color: #1a1a1a; /* Gris neutro profundo para LCD */
+    border: 2px solid @border_color;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* 2. BARRA DE HERRAMIENTAS LATERAL (Sidebar) */
+.drawing-toolbar {
+    background-color: @bg_widgets;
+    border-right: 1px solid @osu_pink;
+    padding: 4px;
+}
+
+/* Botones de Herramienta (Pincel, Goma, etc.) */
+button.tool-btn {
+    padding: 8px;
+    margin: 2px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    transition: all 100ms ease;
+}
+
+button.tool-btn:hover {
+    background-color: alpha(@anime_cyan, 0.1);
+}
+
+button.tool-btn:checked {
+    background-color: alpha(@anime_cyan, 0.2);
+    border-bottom: 2px solid @anime_cyan;
+}
+
+/* 3. SELECTOR DE COLOR (Estilo HUD Anime) */
+.color-picker-frame {
+    border-radius: 12px;
+    border: 2px solid @anime_cyan;
+    background-color: @bg_surface;
+    padding: 10px;
+}
+
+/* 4. CURSORES (Simulación en CSS) */
+.canvas-cursor-precision {
+    cursor: crosshair;
+}

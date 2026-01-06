@@ -1,0 +1,114 @@
+/* ==========================================================================
+   _ELEMENTS.CSS - NEONBRUSH OS (GTK 4 MODERN)
+   ========================================================================== */
+
+/* --- CHECKBUTTONS (Casillas de verificación) --- */
+/* En GTK 4, el nodo es check */
+check {
+    min-width: 18px;
+    min-height: 18px;
+    border: 2px solid @border_color;
+    border-radius: 4px;
+    background-color: @bg_widgets;
+    margin: 4px;
+    transition: background-color 150ms ease-out, border-color 150ms ease-out;
+}
+
+check:checked {
+    background-color: @osu_pink;
+    border-color: @osu_pink;
+    color: white; 
+    box-shadow: 0 0 6px @osu_pink_glow;
+    /* En GTK 4 usamos -gtk-icon-source para el checkmark */
+    -gtk-icon-source: -gtk-icontheme("object-select-symbolic");
+}
+
+/* --- RADIOBUTTONS (Botones circulares) --- */
+/* GTK 4 a menudo usa el nodo radio o check.radio */
+radio {
+    min-width: 18px;
+    min-height: 18px;
+    border: 2px solid @border_color;
+    border-radius: 100%;
+    background-color: @bg_widgets;
+    margin: 4px;
+    transition: border-color 150ms ease-out;
+}
+
+radio:checked {
+    background-color: @bg_base;
+    border-color: @osu_pink;
+    /* Usamos el gradiente para el punto central como en tu original */
+    background-image: radial-gradient(circle, @osu_pink 40%, transparent 50%);
+    box-shadow: 0 0 6px @osu_pink_glow;
+}
+
+/* --- SLIDERS (Scale) --- */
+/* GTK 4 separa claramente trough (pista) y slider (botón) */
+scale trough {
+    background-color: @bg_widgets;
+    border-radius: 10px;
+    min-height: 6px;
+}
+
+scale slider {
+    background-color: #ffffff;
+    border: 3px solid @osu_pink;
+    border-radius: 100%;
+    min-width: 18px;
+    min-height: 18px;
+    margin: -6px; /* Ajuste para centrar el slider en el trough */
+}
+
+/* El progreso de la barra (lo que queda atrás del slider) */
+scale highlight {
+    background-color: @osu_pink;
+    border-radius: 10px;
+}
+
+/* --- BUTTONS --- */
+button {
+    background-color: @bg_surface;
+    border: 1px solid @border_color;
+    border-radius: 6px;
+    padding: 6px 12px;
+    color: @text_main;
+    transition: background-color 150ms ease-out, border-color 150ms ease-out, color 150ms ease-out;
+}
+
+button:hover {
+    background-color: alpha(@osu_pink, 0.1);
+    border-color: @osu_pink;
+    color: @osu_pink;
+}
+
+button:active, 
+button:checked {
+    background-color: @osu_pink;
+    color: white;
+    box-shadow: 0 0 10px @osu_pink_glow;
+}
+
+/* Botones sugeridos (Action buttons) */
+button.suggested-action {
+    background-color: @anime_cyan;
+    color: @bg_base;
+    border-color: @anime_cyan;
+}
+
+/* --- ESTADOS DESACTIVADOS --- */
+button:disabled,
+check:disabled,
+radio:disabled {
+    background-color: alpha(@bg_widgets, 0.5);
+    border-color: alpha(@border_color, 0.2);
+    color: @text_dim;
+    box-shadow: none;
+    transition: none;
+}
+
+scale:disabled trough { background-color: alpha(@bg_widgets, 0.3); }
+scale:disabled slider { background-color: @text_dim; border-color: transparent; }
+
+/* --- HOVER GLOBAL --- */
+check:hover, radio:hover { border-color: @anime_cyan; }

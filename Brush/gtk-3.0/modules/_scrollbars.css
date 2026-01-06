@@ -1,0 +1,59 @@
+/* ==========================================================================
+   _SCROLLBARS.CSS - BRUSH DERIVATIVE (ESTABILIZADO MATE)
+   ========================================================================== */
+
+scrollbar {
+    background-color: transparent;
+    transition: all 150ms ease;
+    -GtkScrollbar-has-backward-stepper: 0;
+    -GtkScrollbar-has-forward-stepper: 0;
+}
+
+/* El fondo (pista) de la barra */
+scrollbar trough {
+    background-color: transparent;
+    border-radius: 4px;
+    transition: background-color 200ms ease;
+}
+
+/* Fondo sutil tipo papel o lienzo al pasar el mouse */
+scrollbar trough:hover {
+    background-color: alpha(@bg_widgets, 0.6);
+}
+
+/* El control deslizante (slider) - Estilo "Trazo Sólido" */
+scrollbar slider {
+    background-color: alpha(@text_dim, 0.5);
+    border-radius: 6px; /* Bajado de 10px a 6px para un look menos "burbuja" y más "pincel" */
+    margin: 4px;
+    min-width: 6px;
+    min-height: 6px;
+    border: none;
+    transition: all 120ms ease-in-out;
+}
+
+/* Estado Hover: Pigmento Naranja Óleo (Sin Glow) */
+scrollbar slider:hover {
+    background-color: @osu_pink;
+    /* En lugar de ensanchar el objeto, usamos un borde sólido para destacar */
+    border: 1px solid shade(@osu_pink, 0.8);
+    box-shadow: none; /* ELIMINADO GLOW */
+}
+
+/* Estado Active (Arrastrando): Pigmento Azul Cobalto */
+scrollbar slider:active {
+    background-color: @anime_cyan;
+    border: 1px solid shade(@anime_cyan, 0.8);
+    box-shadow: none; /* ELIMINADO GLOW */
+}
+
+/* Scrollbars horizontales */
+scrollbar.horizontal slider {
+    min-height: 6px;
+    min-width: 30px;
+}
+
+/* --- ESTILO JUNCTION --- */
+scrollbar junction {
+    background-color: transparent;
+}

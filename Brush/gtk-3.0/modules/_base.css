@@ -1,0 +1,35 @@
+/* modules/_base.css - Versión BRUSH (Sin efectos Glow) */
+
+window {
+    background-color: @bg_base;
+    color: @text_main;
+    /* Eliminamos cualquier rastro de difuminado neon */
+    text-shadow: none;
+    box-shadow: none;
+}
+
+/* Tipografía y Escala */
+label, entry, button {
+    font-family: "Exo 2", sans-serif;
+    font-size: 10pt;
+    -gtk-dpi: 96;
+}
+
+/* Definición de trazos para elementos de interfaz */
+button {
+    border: 2px solid @border_stroke;
+    border-radius: 4px; /* Bordes más rectos o ligeramente curvos, no orgánicos */
+    background-clip: padding-box;
+}
+
+/* Optimización de Iconos para 768p */
+image {
+    -gtk-icon-transform: scale(1);
+    -gtk-icon-shadow: none; /* Adiós al brillo en iconos */
+}
+
+/* Estilo de entrada de texto tipo 'Canvas' */
+entry {
+    background-color: shade(@bg_base, 0.9);
+    border-bottom: 2px solid @brush_primary; /* Simula un subrayado de pincel */
+}

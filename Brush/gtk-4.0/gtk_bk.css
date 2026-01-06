@@ -1,0 +1,14 @@
+/* NeonBrush OS - Entry Point */
+@import url("modules/_mode_switch.css");
+@import url("modules/_colors.css");
+@import url("modules/_base.css");
+@import url("modules/_osu.css");
+@import url("modules/_anime.css");
+@import url("modules/_drawing.css");
+@import url("modules/_elements.css");
+@import url("modules/_menus.css");
+@import url("modules/_scrollbars.css");
+@import url("modules/_tooltips.css");
+@import url("modules/_levelbar.css");
+@import url("modules/_switch.css");
+@import url("modules/_shadows.css");

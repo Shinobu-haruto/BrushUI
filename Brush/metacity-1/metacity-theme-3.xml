@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<metacity_theme>
+
+<info>
+  <name>Brush</name>
+  <author>Shinobu Haruto</author>
+  <copyright>2026</copyright>
+  <description>Solid Paint Window Controls – Matte & Digital Art Style</description>
+</info>
+
+<frame_geometry name="normal"
+    rounded_top_left="6"
+    rounded_top_right="6">
+
+  <distance name="left_width" value="2"/>
+  <distance name="right_width" value="2"/>
+  <distance name="bottom_height" value="2"/>
+
+  <distance name="title_vertical_pad" value="8"/>
+  <distance name="button_border" value="4"/>
+
+  <aspect_ratio name="button" value="1.0"/>
+</frame_geometry>
+
+<draw_ops name="close_normal">
+  <rectangle color="#ff66aa" x="4" y="4" width="12" height="12" radius="4" filled="true"/>
+</draw_ops>
+
+<draw_ops name="close_hover">
+  <rectangle color="#cc4b88" x="2" y="2" width="16" height="16" radius="4" filled="true"/>
+  <rectangle color="#ff66aa" x="4" y="4" width="12" height="12" radius="2" filled="true"/>
+</draw_ops>
+
+<draw_ops name="close_pressed">
+  <rectangle color="#ffffff" x="4" y="4" width="12" height="12" radius="4" filled="true"/>
+</draw_ops>
+
+<draw_ops name="min_normal">
+  <rectangle color="#787c99" x="4" y="10" width="12" height="4" radius="2" filled="true"/>
+</draw_ops>
+
+<draw_ops name="min_hover">
+  <rectangle color="#c0caf5" x="2" y="2" width="16" height="16" radius="4" filled="true"/>
+  <rectangle color="#2f3549" x="4" y="10" width="12" height="4" radius="1" filled="true"/>
+</draw_ops>
+
+<draw_ops name="max_normal">
+  <rectangle color="#00e5ff" x="4" y="4" width="12" height="12" radius="4" filled="true"/>
+</draw_ops>
+
+<draw_ops name="max_hover">
+  <rectangle color="#00b3cc" x="2" y="2" width="16" height="16" radius="4" filled="true"/>
+  <rectangle color="#00e5ff" x="4" y="4" width="12" height="12" radius="2" filled="true"/>
+</draw_ops>
+
+<draw_ops name="button_inactive">
+  <rectangle color="#32344a" x="4" y="4" width="12" height="12" radius="4" filled="true"/>
+</draw_ops>
+
+<frame_style name="normal" geometry="normal">
+
+  <piece position="entire_background">
+    <fill color="#1a1b26"/> </piece>
+
+  <piece position="title">
+    <draw_ops>
+      <title
+        color="#c0caf5"
+        x="(width - title_width) / 2"
+        y="((height - title_height) / 2)"/>
+    </draw_ops>
+  </piece>
+
+  <line color="#00e5ff"
+        x1="0" y1="height-2"
+        x2="width" y2="height-2"
+        width="2"/>
+
+  <button function="close"     state="normal"    draw_ops="close_normal"/>
+  <button function="close"     state="hover"     draw_ops="close_hover"/>
+  <button function="close"     state="pressed"   draw_ops="close_pressed"/>
+  <button function="close"     state="inactive"  draw_ops="button_inactive"/>
+
+  <button function="minimize"  state="normal"    draw_ops="min_normal"/>
+  <button function="minimize"  state="hover"     draw_ops="min_hover"/>
+  <button function="minimize"  state="inactive"  draw_ops="button_inactive"/>
+
+  <button function="maximize"  state="normal"    draw_ops="max_normal"/>
+  <button function="maximize"  state="hover"     draw_ops="max_hover"/>
+  <button function="maximize"  state="inactive"  draw_ops="button_inactive"/>
+
+</frame_style>
+
+<style_set name="normal">
+  <frame focus="yes" state="normal" style="normal"/>
+  <frame focus="no" state="normal" style="normal"/>
+</style_set>
+
+<window type="normal" style_set="normal"/>
+<window type="dialog" style_set="normal"/>
+<window type="modal_dialog" style_set="normal"/>
+
+</metacity_theme>
