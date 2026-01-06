@@ -45,7 +45,10 @@ BrushUI/
 ## 📸 Capturas
 
 <p align="center">
-  <img src="thumbnail-panel.png" alt="Panel NeonBrush" width="256"/>
+  <img src="screenshots/NeonBrush-preview.png" alt="NeonBrush" width="256"/>
+</p>
+<p align="center">
+  <img src="screenshots/Brush-preview.png" alt="Brush" width="256"/>
 </p>
 
 *(Añade aquí más capturas dentro de la carpeta `screenshots/` si las tienes)*
